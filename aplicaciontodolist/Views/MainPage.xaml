@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:aplicaciontodolist.ViewModels"
+             x:Class="aplicaciontodolist.Views.MainPage" 
+             BackgroundImageSource="fondo.jpeg">
+
+    <ContentPage.BindingContext>
+        <vm:TaskViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ScrollView Grid.Row="0">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Tareas" FontSize="30" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,20"/>
+                <Image Source="feliz.png" HeightRequest="80" HorizontalOptions="End" Margin="40,-50"/>
+
+                <!-- Lista de Tareas -->
+                    <CollectionView ItemsSource="{Binding Tareas}"  
+                                    SelectionMode="Single"
+                                    SelectionChanged="OnTaskSelected" 
+                                    Margin="0,40">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <!-- Enmarcar cada tarea con un Frame -->
+                            <Frame BackgroundColor="{StaticResource blanco}" 
+                                   CornerRadius="10"
+                                   BorderColor="{StaticResource segundocolor}"
+                                   Margin="10"
+                                   Padding="10"
+                                   HasShadow="True">
+                                <StackLayout Orientation="Horizontal" Spacing="10">
+                                    <!-- Switch para marcar como completa -->
+                                    <Switch IsToggled="{Binding IsComplete}" 
+                                            OnColor="{StaticResource primercolor}" 
+                                            ThumbColor="{StaticResource segundocolor}" />
+
+                                    <!-- Título de la tarea -->
+                                    <Label Text="{Binding Title}" 
+                                           FontSize="14" 
+                                           VerticalOptions="Center" 
+                                           TextColor="Black" />
+                                    <!-- Nombre de la categoría -->
+                                    <Label Text="{Binding CategoriaNombre}" 
+                                           FontSize="14" 
+                                           VerticalOptions="Center" 
+                                           TextColor="Gray" />
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+
+        <Button Text="Agregar Tareas" 
+                WidthRequest="130" 
+                HorizontalOptions="End" 
+                VerticalOptions="End" 
+                Margin="20" 
+                BackgroundColor="{StaticResource segundocolor}" 
+                Grid.Row="1" 
+                Clicked="OnClickedNavigate"/>
+    </Grid>
+    </ScrollView>
+</ContentPage>

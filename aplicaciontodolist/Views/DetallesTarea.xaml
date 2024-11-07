@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="aplicaciontodolist.Views.DetallesTarea"
+             Title="DetallesTarea" BackgroundImageSource="fondo.jpeg">
+    <VerticalStackLayout Padding="15" Spacing="10" HorizontalOptions="Center" HeightRequest="300">
+        <Image Source="feliz.png" WidthRequest=" 110" HorizontalOptions="End" Margin="0,-60" TranslationY="-100"/>
+        <Label Text="{Binding Task.Title}" FontSize="30" HorizontalOptions="Start"/>
+        <Label Text="{Binding Task.Description}" FontSize="16"/>
+        <Label Text="{Binding Task.Categorias}" FontSize="16" TextColor="Blue"/>
+        <Label Text="{Binding Task.DateStart}" />
+        <Label Text="{Binding Task.DateEnd}" />
+
+        <Button  Clicked="OnButtonEditar" Text="Editar" 
+                 WidthRequest="100" BackgroundColor="{StaticResource segundocolor}" 
+                 HorizontalOptions="Start" Margin="-60,70"/>
+        <Button Text="Eliminar" Command="{Binding EliminarTareaCommand}" 
+                WidthRequest="100" BackgroundColor="{StaticResource segundocolor}" HorizontalOptions="End" Margin="-60,-123.9"/>
+
+    </VerticalStackLayout>
+</ContentPage>

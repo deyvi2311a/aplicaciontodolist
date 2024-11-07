@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+    <ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+        <Color x:Key="primercolor">#b1cde1</Color>
+        <Color x:Key="segundocolor">#699acc</Color>
+        <Color x:Key="blanco">#fefefe</Color>
+        <Color x:Key="tercercolor">#b3ebfd</Color>
+        <Color x:Key="posible">#bf3a44</Color>
+        <Color x:Key="negro">#282b33</Color>
+
+        <Style x:Key="botones" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource negro}"/>
+            <Setter Property="TextColor" Value="{StaticResource blanco}"/>
+            <Setter Property="CornerRadius" Value="15"/>
+        </Style>
+    </ResourceDictionary>

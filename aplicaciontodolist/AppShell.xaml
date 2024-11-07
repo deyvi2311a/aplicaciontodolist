@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="aplicaciontodolist.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:aplicaciontodolist.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <Tab Title="Home" Icon="hogar.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+
+        <Tab Title="Calendario" Icon="calendario.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:Calendario}"
+                Route="Calendario" />
+        </Tab>
+
+        <Tab Title="Retos" Icon="exito.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:Retos}"
+                Route="Retos" />
+        </Tab>
+
+        <Tab Title="Perfil" Icon="editar.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:Perfil}"
+                Route="Perfil" />
+        </Tab>
+    </TabBar>
+
+    <!-- Agregar rutas para DetallesTarea y EditarTarea -->
+    <ShellContent Route="DetallesTarea" ContentTemplate="{DataTemplate local:DetallesTarea}" />
+    <ShellContent Route="EditarTarea" ContentTemplate="{DataTemplate local:EditarTarea}" />
+
+</Shell>

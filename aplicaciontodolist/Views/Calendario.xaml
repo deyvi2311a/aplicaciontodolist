@@ -1,0 +1,50 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="aplicaciontodolist.Views.Calendario"
+             BackgroundImageSource="fondo.jpeg">
+    <ScrollView>
+        <StackLayout Spacing="5" >
+            <Label Text="Calendario" FontSize="40" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,20"/>
+
+            <!-- Label para mostrar la frase diaria -->
+            <StackLayout Margin="0,20">
+                <Label x:Name="quoteLabel" FontSize="15" HorizontalOptions="Center" Padding="10" WidthRequest="280" BackgroundColor="{StaticResource segundocolor}" TextColor="White"/>
+                <Image Source="corazon.png" WidthRequest="100" HorizontalOptions="End"/>
+            </StackLayout>
+            
+            <!-- Controles para cambiar de mes -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+                <Button Text="←" Clicked="OnPreviousMonth" BackgroundColor="{StaticResource segundocolor}" />
+                <Label x:Name="monthYearLabel" FontSize="Medium" FontAttributes="Bold" VerticalOptions="Center" />
+                <Button Text="→" Clicked="OnNextMonth" BackgroundColor="{StaticResource segundocolor}" />
+            </StackLayout>
+
+            <!-- Calendario en forma de Grid -->
+            <Grid x:Name="calendarGrid" RowSpacing="5" ColumnSpacing="5" HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <!-- Título del calendario -->
+                    <RowDefinition Height="Auto" />
+                    <!-- Fila para el mes y año -->
+                    <RowDefinition Height="Auto" />
+                    <!-- Fila para los días de la semana -->
+                    <RowDefinition Height="*" />
+                    <!-- Fila para los días del mes -->
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                
+                
+            </Grid>
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

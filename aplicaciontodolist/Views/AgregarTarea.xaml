@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="aplicaciontodolist.Views.AgregarTarea"
+             BackgroundImageSource="fondo.jpeg">
+    <ScrollView>
+        <VerticalStackLayout BackgroundColor="{StaticResource blanco}" WidthRequest="350" Margin="0,20" HorizontalOptions="Center" HeightRequest="600">
+
+            <Image Source="tareas.png" HeightRequest="70" HorizontalOptions="End" Margin="30,5"/>
+            <Label Text="Agregar Tarea" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" Margin="0, -40" TextColor="{StaticResource negro}" />
+
+            <!-- Enlace de datos a la propiedad Title del ViewModel -->
+            <Entry Placeholder="Agregar Nueva Tarea" Margin="0,90" WidthRequest="300" Text="{Binding Title}" />
+
+            <!-- Enlace de datos a la propiedad Description del ViewModel -->
+            <Entry Placeholder="Descripcion" Margin="0,-60" WidthRequest="320" Text="{Binding Description}" />
+
+            <!-- Enlace de datos a la propiedad Categorias del ViewModel -->
+            <Picker Title="Seleccionar Categoria"
+                    ItemsSource="{Binding Categorias}"
+                    SelectedItem="{Binding CategoriaSeleccionada}"
+                    ItemDisplayBinding="{Binding Nombre}"
+                    WidthRequest="300"
+                    Margin="0,95"
+                    Background="Red"/>
+
+            <Label Text="Fecha de Inicio" HorizontalOptions="Start" Margin="45,-70"/>
+            <!-- Enlace de datos a la propiedad DateStart del ViewModel -->
+            <DatePicker HorizontalOptions="Start" Margin="40,80" WidthRequest="110" Date="{Binding DateStart}" />
+
+            <Label Text="Fecha final" HorizontalOptions="End" Margin="100,-149" />
+            <!-- Enlace de datos a la propiedad DateEnd del ViewModel -->
+            <DatePicker HorizontalOptions="End" Margin="48,158.5" WidthRequest="110" Date="{Binding DateEnd}" />
+
+            <!-- Enlace de datos al comando GuardarTareaCommand del ViewModel -->
+            <Button Text="Aceptar" WidthRequest="250" HorizontalOptions="Center" Margin="0,-100" BackgroundColor="{StaticResource segundocolor}" Command="{Binding GuardarTareaCommand}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
