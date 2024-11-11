@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="aplicaciontodolist.Views.HomePageRegister"
+             Title=""
+             Shell.NavBarIsVisible="False"
+             Background="#243c6c">
+    <AbsoluteLayout>
+        <!-- Imagen de fondo -->
+        <!--<Image Source="dotnet_bot.jpg" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="9, 0, 1, 0.6" />-->
+
+        <!-- Contenido de la página -->
+        <Image Source="registro.png" 
+           HeightRequest="180" 
+           WidthRequest="200" 
+           TranslationX="88"/>
+
+        <StackLayout AbsoluteLayout.LayoutFlags="All" 
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 0.9" 
+                 VerticalOptions="Center">
+
+            <Frame CornerRadius="20" 
+               Padding="20" 
+               Margin="30" 
+               HasShadow="True"
+               TranslationY="50">
+
+                <StackLayout>
+                    <Label Text="Registrarse" Margin="20" 
+                           Padding="0,0,0,20" 
+                           FontSize="30" 
+                           FontFamily="Poppins" 
+                           TextColor="#243c6c" 
+                           FontAttributes="Bold" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Center"/>
+                    
+                    <Border Stroke="#243c6c" 
+                        StrokeThickness="1" 
+                        HeightRequest="45" 
+                        Margin="0,0,0,20">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+
+                        <Grid Background="#243c6c">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Entry x:Name="nameEntrada" 
+                                Placeholder="Nombre"
+                                PlaceholderColor="#fff" 
+                                TextColor="#fff" 
+                                FontFamily="Poppins" 
+                                HorizontalOptions="FillAndExpand" 
+                                VerticalOptions="CenterAndExpand" 
+                                HeightRequest="65" 
+                                Margin="10"/>
+                            
+                            <Image Source="nombre.png" 
+                               VerticalOptions="Center" 
+                               HorizontalOptions="End" 
+                               WidthRequest="35"
+                               HeightRequest="30"
+                               Margin="5" 
+                               Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border Stroke="#243c6c" StrokeThickness="1" 
+                            HeightRequest="45" Margin="0,0,0,20">
+                        
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+
+                        <Grid Background="#243c6c">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Entry x:Name="emailEntry" 
+                            Placeholder="Correo Electrónico"
+                            PlaceholderColor="#fff" 
+                            TextColor="#fff" 
+                            FontFamily="Poppins" 
+                            HorizontalOptions="FillAndExpand" 
+                            VerticalOptions="CenterAndExpand" 
+                            HeightRequest="65" 
+                            Margin="10"/>
+
+                            <Image Source="circulo.png" 
+                               VerticalOptions="Center" 
+                               HorizontalOptions="End" 
+                               WidthRequest="35"
+                               HeightRequest="30"  
+                               Margin="5" 
+                               Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border Stroke="#243c6c" StrokeThickness="1" HeightRequest="45">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+
+                        <Grid Background="#243c6c">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Entry x:Name="passwordEntrada"
+                            Placeholder="Contraseña" 
+                            PlaceholderColor="#fff" 
+                            TextColor="#fff" 
+                            FontFamily="Poppins" 
+                            HorizontalOptions="FillAndExpand" 
+                            VerticalOptions="CenterAndExpand" 
+                            HeightRequest="65" 
+                            Margin="10" 
+                            IsPassword="True"    
+                            Grid.Column="0" />
+
+                            <Image Source="cerrar.png" 
+                               VerticalOptions="Center" 
+                               WidthRequest="35"
+                               HeightRequest="30"
+                               HorizontalOptions="End" 
+                               Margin="0, 0, 10, 0" 
+                               Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    
+                    <Button Text="Registrarse" 
+                     FontSize="20" 
+                     FontFamily="Poppins" 
+                     BackgroundColor="#243c6c" 
+                      Margin="20"
+                     WidthRequest="290"
+                     CornerRadius="20" 
+                     Clicked="ButtonLogin_Clicked"/>
+
+
+                    <Button Text="Iniciar sesión"
+                        FontSize="16"
+                        WidthRequest="110"
+                        HeightRequest="40"
+                        FontFamily="Poppins"
+                        TextColor="#243c6c"
+                        Background="Transparent"
+                        Margin="10"
+                        CornerRadius="20"
+                        BorderWidth="1"
+                        BorderColor="#243c6c"
+                        Clicked="ButtonLoginNav_Clicked"    
+                        VerticalOptions="End"
+                        HorizontalOptions="End"
+                        />
+                </StackLayout>
+            </Frame>
+            <!-- Otros controles -->
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

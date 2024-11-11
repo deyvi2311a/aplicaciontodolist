@@ -6,6 +6,12 @@
     xmlns:local="clr-namespace:aplicaciontodolist.Views"
     Shell.FlyoutBehavior="Disabled">
 
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:HomePageLogin}"
+        Route="MainPage"
+        />
+
     <TabBar>
         <Tab Title="Home" Icon="hogar.png">
             <ShellContent
